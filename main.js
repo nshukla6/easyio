@@ -36,7 +36,7 @@ app.get('/api/info', (req, res) => {
 });
 
 io.on('connection', (sock) => {
-  console.log('Client connected');
+  console.log('Client connected basu');
 
   sock.on('heartbeat', (payload) => {
     payload.nodeName = name;
@@ -53,6 +53,7 @@ server.listen(+port, '0.0.0.0', (err) => {
     console.log(err.stack);
     return;
   }
+  console.log("server Connected");
 
   console.log(`Node [${name}] listens on http://127.0.0.1:${port}.`);
 });
